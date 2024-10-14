@@ -5,9 +5,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:href": "ng build --base-href ./",
+    "build:github": "npm run delete:docs && npm run build:href && npm run copy:dist",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:countryApp": "node dist/country-app/server/server.mjs"
+    "serve:ssr:countryApp": "node dist/country-app/server/server.mjs",
+    "delete:docs": "del docs",
+    "copy:dist": "xcopy dist\\country-app\\browser\\* .\\docs /E /I /H"
   },
   "private": true,
   "dependencies": {
